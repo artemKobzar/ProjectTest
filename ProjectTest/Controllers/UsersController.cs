@@ -65,5 +65,22 @@ namespace ProjectTest.Controllers
             await _mediator.Send(command);
             return NoContent();
         }
+        [HttpGet]
+        [Route("/UserWithPassport", Name = "Event")]
+        public async Task<ActionResult<UserJoinPassportDto>> GetUserWithPassport(Guid id)
+        {
+            var user = await _mediator.Send(new GetUserWithPassportRequest { Id = id });
+            return Ok(user);
+        }
+
+        [HttpGet]
+        [Route("/UserWithPassportFilter", Name = "Filter")]
+        public async Task<ActionResult<List<UserListDto>>> GetUserWithPassportFiltering(string? searchTerm, string? sortColumn, string? sortOrder)
+        {
+            var users = await _mediator.Send(new GetUserWithPassportListFilteringRequest(searchTerm, sortColumn, sortOrder));
+
+            return Ok(users);
+        }
     }
+
 }

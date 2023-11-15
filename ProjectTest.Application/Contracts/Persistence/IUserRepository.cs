@@ -11,7 +11,10 @@ namespace ProjectTest.Application.Contracts.Persistence
 {
     public interface IUserRepository: IGenericRepository<User>
     {
-        Task<User> GetUserWithPassport(Guid id);
-        Task <List<UserJoinPassportDto>> GetCsvUserWithPassport();
+        //Task<User> GetUserWithPassport(Guid id);
+        Task <List<UserJoinPassportDto>> GetUserWithPassport();
+        Task<UserJoinPassportDto> GetUserWithPassport(Guid id);
+        Task <List<UserJoinPassportDto>> GetUserWithPassportFiltering(string? searchTerm, string? sortColumn, string? sortOrder);
+
     }
 }

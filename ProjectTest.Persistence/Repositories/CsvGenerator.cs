@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
+using ProjectTest.Application.DTOs.UserDto.Attributes;
 
 namespace ProjectTest.Persistence.Repositories
 {
@@ -38,7 +39,8 @@ namespace ProjectTest.Persistence.Repositories
             var headers = new StringBuilder();
             foreach (var property in properties)
             {
-                headers.Append(property.Name).Append(",");
+                var attr = property.GetCustomAttribute<CsvGeneratorAttribute>();
+                headers.Append(attr.Heading ?? property.Name).Append(",");
             }
             return headers.ToString()[..^1];
         }

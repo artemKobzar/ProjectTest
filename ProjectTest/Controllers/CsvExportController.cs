@@ -111,20 +111,4 @@ namespace ProjectTest.Controllers
         }
     }
 }
-//string[] coloumnNames = new string[] { "First Name", "Last Name", "Phone Number", "Email", "Address" };
-//var users = await _mediator.Send(new GetUserListCsvRequest());
-//string row = string.Empty;
-//foreach (string coloumnName in coloumnNames)
-//{
-//   var header = coloumnName + ';';
-//   header += "\r\n";
-//}
-// row += "\r\n";
-//foreach (var user in users) 
-//{
-//   row += user.FirstName + ";";
-//   row += user.LastName + ";";
-//   row += user.PhoneNumber + ";";
-//   row += user.Email + ";";
-//   row += user.Address + ";";
-//}
+

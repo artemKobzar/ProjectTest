@@ -3,6 +3,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ProjectTest.Application.Contracts.Persistence;
 using ProjectTest.Persistence.Repositories;
+using ProjectTest.Persistence.Services;
+using ProjectTest.Persistence.Services.Interfaces;
+using System.Reflection;
 
 namespace ProjectTest.Persistence
 {
@@ -15,6 +18,10 @@ namespace ProjectTest.Persistence
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IPassportUserRepository, PassportUserRepository>();
+            services.AddScoped<IReportEventServiceRepository, ReportEventServiceRepository>();
+            services.AddScoped<MessageReportService>();
+            services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<ISmsService, SmsService>();
             services.AddDbContext<ProjectTestDbContext>(options =>
             {
                 options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);

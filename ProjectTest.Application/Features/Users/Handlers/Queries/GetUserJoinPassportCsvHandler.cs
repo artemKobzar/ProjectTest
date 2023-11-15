@@ -22,7 +22,7 @@ namespace ProjectTest.Application.Features.Users.Handlers.Queries
         }
         public async Task<List<UserJoinPassportDto>> Handle(GetUserJoinPassportCsvRequest request, CancellationToken cancellationToken)
         {
-            var users = await _userRepository.GetCsvUserWithPassport();
+            var users = await _userRepository.GetUserWithPassport();
             return _mapper.Map<List<UserJoinPassportDto>>(users);
         }
     }

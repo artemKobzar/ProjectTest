@@ -23,7 +23,7 @@ namespace ProjectTest.Application.Features.Users.Handlers.Queries
         }
         public async Task<UserDto> Handle(GetUserRequest request, CancellationToken cancellationToken)
         {
-            var user = await _userRepository.GetUserWithPassport(request.Id);
+            var user = await _userRepository.Get(request.Id);
             if (user == null || user.Id != request.Id)
             {
                 throw new NotFoundException(nameof(User), request.Id);

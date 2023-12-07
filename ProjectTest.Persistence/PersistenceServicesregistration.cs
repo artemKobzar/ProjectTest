@@ -13,7 +13,11 @@ namespace ProjectTest.Persistence
     {
         public static IServiceCollection CofigurePersistenceServices (this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<ProjectTestDbContext>(options => options.UseSqlite(configuration.GetConnectionString("DbConnection")));
+            //services.AddDbContext<ProjectTestDbContext>(options => options.UseSqlite(configuration.GetConnectionString("DbConnection")));
+            services.AddDbContext<ProjectTestDbContext>(options => 
+            { options.UseSqlServer(configuration.GetConnectionString("SQLDbConnection"));
+                options.EnableSensitiveDataLogging(true); 
+            });
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IUserRepository, UserRepository>();
@@ -22,6 +26,8 @@ namespace ProjectTest.Persistence
             services.AddScoped<MessageReportService>();
             services.AddScoped<IEmailService, EmailService>();
             services.AddScoped<ISmsService, SmsService>();
+            services.AddScoped<ISPUserRepository, SPUserRepository>();
+            services.AddScoped<ISPPassportUserRepository, SPPassportUserRepository>();
             services.AddDbContext<ProjectTestDbContext>(options =>
             {
                 options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);

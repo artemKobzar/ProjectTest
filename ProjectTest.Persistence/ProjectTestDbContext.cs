@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Project.Persistence.EntityTypeConfigurations;
 using ProjectTest.Application.Contracts.Persistence;
+using ProjectTest.Application.Convertors;
+using ProjectTest.Application.DTOs.UserDto;
 using ProjectTest.Domain;
 
 
@@ -13,6 +15,7 @@ namespace ProjectTest.Persistence
         public DbSet<PassportUser> PassportUsers { get; set; }
         public DbSet<EventType> EventTypes { get; set; }
         public DbSet<EventMessageResult> EventMessageResults { get; set; }
+        public DbSet<UserJoinPassportDto> UserWithPassport { get; set; } 
         public ProjectTestDbContext(DbContextOptions<ProjectTestDbContext> options): base(options)
         {
             
@@ -21,6 +24,11 @@ namespace ProjectTest.Persistence
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ProjectTestDbContext).Assembly);
 
+        }
+        protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+        {
+            base.ConfigureConventions(configurationBuilder);
+            configurationBuilder.Properties<DateOnly>().HaveConversion<DateOnlyConverter>().HaveColumnType("date");
         }
     }
 }

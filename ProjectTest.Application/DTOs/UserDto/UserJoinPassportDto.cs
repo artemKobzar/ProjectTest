@@ -1,4 +1,5 @@
-﻿using ProjectTest.Application.DTOs.UserDto.Attributes;
+﻿using Microsoft.EntityFrameworkCore;
+using ProjectTest.Application.DTOs.UserDto.Attributes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace ProjectTest.Application.DTOs.UserDto
 {
+    [Keyless]
     public class UserJoinPassportDto
     {
         [CsvGenerator (Heading = "First name")]

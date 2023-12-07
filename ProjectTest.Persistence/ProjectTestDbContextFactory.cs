@@ -15,9 +15,10 @@ namespace ProjectTest.Persistence
                 .AddJsonFile("appsettings.json")
                 .Build();
             var builder = new DbContextOptionsBuilder<ProjectTestDbContext>();
-            var connectionString = configuration.GetConnectionString("DbConnection");
+            var connectionString = configuration.GetConnectionString("SQLDbConnection");
 
-            builder.UseSqlite(connectionString);
+            //builder.UseSqlite(connectionString);
+            builder.UseSqlServer(connectionString);
 
             return new ProjectTestDbContext(builder.Options);
         }

@@ -18,6 +18,7 @@ namespace ProjectTest.Persistence.Repositories
         public async Task<EventMessageResult> Add(EventMessageResult entity)
         {
             await _dbContext.EventMessageResults.AddAsync(entity);
+            Thread.Sleep(2000);
             await _dbContext.SaveChangesAsync();
             return entity;
         }

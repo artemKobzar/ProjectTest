@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProjectTest.Application\ProjectTest.Application.csproj" />
+    <ProjectReference Include="..\ProjectTest.Identity\ProjectTest.Identity.csproj" />
     <ProjectReference Include="..\ProjectTest.Persistence\ProjectTest.Persistence.csproj" />
   </ItemGroup>
 

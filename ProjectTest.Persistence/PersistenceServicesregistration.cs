@@ -17,7 +17,7 @@ namespace ProjectTest.Persistence
             services.AddDbContext<ProjectTestDbContext>(options => 
             { options.UseSqlServer(configuration.GetConnectionString("SQLDbConnection"));
                 options.EnableSensitiveDataLogging(true); 
-            });
+            }, ServiceLifetime.Scoped);
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IUserRepository, UserRepository>();

@@ -23,8 +23,8 @@ namespace ProjectTest.Identity.Seedings
                     NormalizedEmail = "QWERTY@GMAIL.COM",
                     FirstName = "Soul",
                     LastName = "Goodman",
-                    UserName = "lowyer",
-                    NormalizedUserName = "LOWYER",
+                    UserName = "lawyer",
+                    NormalizedUserName = "LAWYER",
                     PasswordHash = hasher.HashPassword(null, "12345"),
                     EmailConfirmed = true
                 },

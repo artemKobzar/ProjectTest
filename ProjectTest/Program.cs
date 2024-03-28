@@ -1,6 +1,7 @@
 using ProjectTest.Application;
 using ProjectTest.Persistence;
 using ProjectTest.Identity;
+using ProjectTest.MailSender;
 using Microsoft.EntityFrameworkCore.Design;
 using ProjectTest.Domain;
 using Microsoft.Extensions.Configuration;
@@ -24,6 +25,7 @@ builder.Services.ConfigureApplicationServices();
 //builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.CofigurePersistenceServices(builder.Configuration);
 builder.Services.ConfigureIdentityServices(builder.Configuration);
+builder.Services.ConfigureMailSenderServices(builder.Configuration);
 
 builder.Services.AddMvc().AddNewtonsoftJson(options =>
 {
@@ -34,6 +36,7 @@ builder.Services.AddControllers().AddJsonOptions(options =>
     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
     options.JsonSerializerOptions.WriteIndented = true;
 });
+builder.Services.AddHttpContextAccessor();
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

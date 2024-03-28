@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectTest.Persistence", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectTest", "ProjectTest\ProjectTest.csproj", "{F20559C4-B6F5-42D7-B7E6-7A6F77E9964A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTest.Identity", "ProjectTest.Identity\ProjectTest.Identity.csproj", "{CD6FBF6F-E47E-4E95-9E61-F5A32BAE509C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectTest.Identity", "ProjectTest.Identity\ProjectTest.Identity.csproj", "{CD6FBF6F-E47E-4E95-9E61-F5A32BAE509C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTest.MailSender", "ProjectTest.MailSender\ProjectTest.MailSender.csproj", "{B5CA965C-842F-4417-BB88-40ED07335148}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{CD6FBF6F-E47E-4E95-9E61-F5A32BAE509C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD6FBF6F-E47E-4E95-9E61-F5A32BAE509C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD6FBF6F-E47E-4E95-9E61-F5A32BAE509C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5CA965C-842F-4417-BB88-40ED07335148}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5CA965C-842F-4417-BB88-40ED07335148}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5CA965C-842F-4417-BB88-40ED07335148}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5CA965C-842F-4417-BB88-40ED07335148}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +68,7 @@ Global
 		{A56172F6-34D9-4C85-8263-0617BE792AF6} = {31FEF089-15FE-410D-A218-4E06F99F1E21}
 		{F20559C4-B6F5-42D7-B7E6-7A6F77E9964A} = {19A1190B-B671-496F-BFAB-55B36ED19362}
 		{CD6FBF6F-E47E-4E95-9E61-F5A32BAE509C} = {31FEF089-15FE-410D-A218-4E06F99F1E21}
+		{B5CA965C-842F-4417-BB88-40ED07335148} = {31FEF089-15FE-410D-A218-4E06F99F1E21}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D9BF241-275A-4736-927A-3F6E333AB484}

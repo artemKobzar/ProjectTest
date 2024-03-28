@@ -22,6 +22,15 @@ namespace ProjectTest.Identity
             services.AddDbContext<ProjectTestIdentityDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("SQLDbConnectionIdentity"),
                 b => b.MigrationsAssembly(typeof(ProjectTestIdentityDbContext).Assembly.FullName)));
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequiredLength = 5;
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.SignIn.RequireConfirmedEmail = false;
+            });
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ProjectTestIdentityDbContext>().AddDefaultTokenProviders();
